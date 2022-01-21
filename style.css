@@ -26,6 +26,12 @@ body {
 }
 
 .grid {
+  display: flex;
   border: 1px solid black;
-  padding: 15px;
+  height: 40px;
+  width: 40px;
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
+  /* padding: 15px; */
 }
