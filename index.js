@@ -2,7 +2,7 @@
   const game = {
     gameBoard: new Array(9),
     state: true,
-    input: null,
+    input: undefined,
 
     init: function () {
       this.cacheDom();
@@ -11,15 +11,15 @@
 
     cacheDom: function () {
       this.grid = document.querySelectorAll(".grid");
-      this.grid1 = document.querySelector("#grid-1");
-      this.grid2 = document.querySelector("#grid-2");
-      this.grid3 = document.querySelector("#grid-3");
-      this.grid4 = document.querySelector("#grid-4");
-      this.grid5 = document.querySelector("#grid-5");
-      this.grid6 = document.querySelector("#grid-6");
-      this.grid7 = document.querySelector("#grid-7");
-      this.grid8 = document.querySelector("#grid-8");
-      this.grid9 = document.querySelector("#grid-9");
+      // this.grid1 = document.querySelector("#grid-1");
+      // this.grid2 = document.querySelector("#grid-2");
+      // this.grid3 = document.querySelector("#grid-3");
+      // this.grid4 = document.querySelector("#grid-4");
+      // this.grid5 = document.querySelector("#grid-5");
+      // this.grid6 = document.querySelector("#grid-6");
+      // this.grid7 = document.querySelector("#grid-7");
+      // this.grid8 = document.querySelector("#grid-8");
+      // this.grid9 = document.querySelector("#grid-9");
     },
 
     bindEvents: function () {
@@ -34,10 +34,14 @@
           game.input = "X";
           game.state = false;
           this.innerText = game.input;
+          let index = this.dataset.pos;
+          game.gameBoard[index] = game.input;
         } else {
           game.input = "O";
           game.state = true;
           this.innerText = game.input;
+          let index = this.dataset.pos;
+          game.gameBoard[index] = game.input;
         }
       }
     },
